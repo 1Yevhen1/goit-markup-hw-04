@@ -109,7 +109,8 @@ ul {
 
 /* first section - Effective Solutions */
 .first-section {
-    background-color: #2e2f42;
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-hero.png");
+    background-repeat: no-repeat;
 }
 
 .main-header {
@@ -380,16 +381,24 @@ img {
     margin: -1px;
     border: 0;
     padding: 0;
-
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
 
+.content-list-li::before {
+    content: "";
+    display: block;
+    width: 264px;
+    height: 112px;
+    border: 1px solid #8E8F99;
+    border-radius: 5px;
+}
+
 .content-list {
     display: flex;
-    gap: 24px;
+    gap: 24px;;
 }
 
 .content-list-li {
@@ -486,4 +495,13 @@ img {
     flex-direction: row;
     max-width: 264px;
     margin-top: 0%;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
