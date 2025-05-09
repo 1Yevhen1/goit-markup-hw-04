@@ -177,7 +177,7 @@ ul {
 /* third section - our team */
 
 .our-team-section {
-    background-color: #F4F4FD
+    background-color: #F4F4FD;
 }
 
 .header-our-team {
@@ -193,6 +193,7 @@ ul {
 
 .team-list-mark {
     background-color: #FFFFFF;
+    box-shadow: inset 0px -1px 1px 1px #2E2F4229;
 }
 
 .content-list {
@@ -279,6 +280,15 @@ ul {
     color: #f4f4fd;
     letter-spacing: 0.02em
 }     
+
+.paragraph-socal-media {
+    font-family: Roboto;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 2%;
+        color: #FFFFFF;
+}
 
 /* ------------------container------------------ */
 
@@ -387,15 +397,6 @@ img {
     overflow: hidden;
 }
 
-.content-list-li::before {
-    content: "";
-    display: block;
-    width: 264px;
-    height: 112px;
-    border: 1px solid #8E8F99;
-    border-radius: 5px;
-}
-
 .content-list {
     display: flex;
     gap: 24px;;
@@ -460,6 +461,49 @@ img {
     width: calc((100% - 48px) / 3);
 }
 
+.portfolio-list-li:hover {
+    border-bottom: solid 1px #b9b9b9;
+}
+
+.portfolio-list-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-list-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.portfolio-list-img:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-list-img::after {
+    content: "14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App · Travel App · Fitness App · Music App · Food Delivery App · E-commerce App · Social Media App · Travel Booking App · Recipe App · Meditation App · Budgeting App";
+    position: absolute; 
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #4D5AE5;
+    color: #f4f4fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 40px 32px 164px 32px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.portfolio-list-img:hover::after {
+    transform: translateY(0);
+} 
+
 .portfolio-list h3 {
     margin-bottom: 8px;
 }
@@ -497,6 +541,11 @@ img {
     margin-top: 0%;
 }
 
+.container-footer {
+    display: flex;
+    gap: 120px;
+}
+
 .icon {
     display: inline-block;
     width: 1em;
@@ -504,4 +553,60 @@ img {
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+}
+
+.footer-icon-list {
+    display: flex;
+    gap: 16px;
+}
+
+.svg-footer {
+    width: 40px;
+    height: 40px;
+}
+
+/* upper-SVG */
+
+.content-list-border {
+    display: block;
+    position: relative;
+    width: 264px;
+    height: 112px;
+    border: 1px solid #8E8F99;
+    border-radius: 5px;
+}
+
+.svg-content-list {
+    position: absolute;
+    height: 62px;
+    width: 62px;
+    bottom: 24px;
+    right: 100px;
+}
+
+.svg-team-list {
+    width: 40px;
+    height: 40px;
+}
+
+.team-list-svg-box {
+    display: flex;
+    padding-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.main-footer {
+    width: 264px;
+    margin: 0 0 0 154px;
+}
+
+.paragraph-socal-media {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: start;
+}
+
+.footer-second-group {
+    width: 208px;
 }
