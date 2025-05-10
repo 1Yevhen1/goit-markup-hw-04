@@ -109,8 +109,11 @@ ul {
 
 /* first section - Effective Solutions */
 .first-section {
-    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-hero.png");
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-hero.png);
     background-repeat: no-repeat;
+    max-width: 1440px;
+    background-position: center;
+    background-size: cover;
 }
 
 .main-header {
@@ -136,6 +139,7 @@ ul {
     background-color: #4D5AE5;
     border: #4D5AE5;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover {
@@ -193,7 +197,9 @@ ul {
 
 .team-list-mark {
     background-color: #FFFFFF;
-    box-shadow: inset 0px -1px 1px 1px #2E2F4229;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .content-list {
@@ -315,7 +321,10 @@ img {
 /* header flex */
 
 .header {
-    border-bottom: 1px solid #e7e9fc;    
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -346,11 +355,29 @@ img {
 
 .list-studio {
     padding: 24px 0;
+    position: relative;
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-studio::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
 }
 
 .contact-info {
     display: flex;
     gap: 40px;
+}
+
+.contact-list {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* first section */
@@ -459,10 +486,30 @@ img {
 
 .portfolio-list-li {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-li:hover {
-    border-bottom: solid 1px #b9b9b9;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list-li:hover .portfolio-list-name-job p.paragraph-team {
+    transform: translateY(0%)
+}
+
+.paragraph-team-background {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--#f4f4fd);
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-img {
@@ -479,25 +526,6 @@ img {
 
 .portfolio-list-img:hover {
     transform: scale(1.05);
-}
-
-.portfolio-list-img::after {
-    content: "14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App · Travel App · Fitness App · Music App · Food Delivery App · E-commerce App · Social Media App · Travel Booking App · Recipe App · Meditation App · Budgeting App";
-    position: absolute; 
-    top: 0;
-    height: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #4D5AE5;
-    color: #f4f4fd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    padding: 40px 32px 164px 32px;
-    text-align: center;
-    transform: translateY(100%);
-    transition: transform 0.4s ease-in-out;
 }
 
 .portfolio-list-img:hover::after {
@@ -543,7 +571,9 @@ img {
 
 .container-footer {
     display: flex;
-    gap: 120px;
+    align-items: baseline;
+
+
 }
 
 .icon {
@@ -561,52 +591,96 @@ img {
 }
 
 .svg-footer {
-    width: 40px;
-    height: 40px;
+    fill: var(--#f4f4fd);
 }
 
 /* upper-SVG */
 
 .content-list-border {
-    display: block;
-    position: relative;
-    width: 264px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 112px;
-    border: 1px solid #8E8F99;
-    border-radius: 5px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
 }
 
 .svg-content-list {
-    position: absolute;
-    height: 62px;
-    width: 62px;
-    bottom: 24px;
-    right: 100px;
+    width: 64px;
+    height: 64px;
 }
 
 .svg-team-list {
     width: 40px;
     height: 40px;
+    fill: #f4f4fd;
 }
 
 .team-list-svg-box {
     display: flex;
-    padding-bottom: 32px;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 24px;
+}
+
+.team-li-svg {
+    height: 40px;
+}
+
+.team-li-svg-href {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-li-svg-href:hover {
+    background-color: #404bbf;
+}
+
+.team-li-svg-href:focus {
+    background-color: #404bbf;
 }
 
 .main-footer {
     width: 264px;
-    margin: 0 0 0 154px;
+    margin-right: 120px;
 }
 
 .paragraph-socal-media {
     display: flex;
     margin-bottom: 16px;
     justify-content: start;
+    letter-spacing: 0.02em;
 }
 
 .footer-second-group {
     width: 208px;
 }
+
+.footer-icon-list-li {
+    height: 40px;
+    width: 40px;
+}
+
+.footer-href {
+    width: 100%;
+    height: 100%;
+    background-color: var(--#4d5ae5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-href:hover {
+    background-color: #31d0aa;
+}
+
+.footer-href:focus {
+    background-color: #31d0aa;
+}
+
