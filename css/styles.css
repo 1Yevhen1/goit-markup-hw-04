@@ -607,11 +607,6 @@ img {
     margin-bottom: 8px;
 }
 
-.svg-content-list {
-    width: 64px;
-    height: 64px;
-}
-
 .svg-team-list {
     width: 40px;
     height: 40px;
@@ -676,6 +671,7 @@ img {
     display: flex;
     align-items: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
 }
 
 :root {
